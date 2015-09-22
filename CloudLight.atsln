@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "CloudLight", "CloudLight\CloudLight.cproj", "{B4E6DDDC-E330-47FB-BDA6-247878C66861}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B4E6DDDC-E330-47FB-BDA6-247878C66861}.Debug|AVR.ActiveCfg = Debug|AVR
+		{B4E6DDDC-E330-47FB-BDA6-247878C66861}.Debug|AVR.Build.0 = Debug|AVR
+		{B4E6DDDC-E330-47FB-BDA6-247878C66861}.Release|AVR.ActiveCfg = Release|AVR
+		{B4E6DDDC-E330-47FB-BDA6-247878C66861}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
