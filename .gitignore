@@ -5,3 +5,6 @@
 *.o
 *.srec
 *.mk
+
+CloudLight/Debug/Makefile
+
