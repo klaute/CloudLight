@@ -26,7 +26,7 @@ void inline ws2812_setleds_pin(struct cRGB *ledarray, uint16_t leds, uint8_t pin
   _delay_us(50);
 }
 
-void ws2812_sendarray(uint8_t *data,uint16_t datlen)
+void ws2812_sendarray(uint8_t *data, uint16_t datlen)
 {
   ws2812_sendarray_mask(data,datlen,_BV(ws2812_pin));
 }
@@ -97,7 +97,7 @@ void inline ws2812_sendarray_mask(uint8_t *data,uint16_t datlen,uint8_t maskhi)
   uint8_t curbyte,ctr,masklo;
   uint8_t sreg_prev;
   
-  masklo	=~maskhi&ws2812_PORTREG;
+  masklo    =~maskhi&ws2812_PORTREG;
   maskhi |=        ws2812_PORTREG;
   sreg_prev=SREG;
   cli();  
@@ -161,8 +161,8 @@ w_nop16
 
     "       dec   %0    \n\t"    //  '1' [+2] '0' [+2]
     "       brne  loop%=\n\t"    //  '1' [+3] '0' [+4]
-    :	"=&d" (ctr)
-    :	"r" (curbyte), "I" (_SFR_IO_ADDR(ws2812_PORTREG)), "r" (maskhi), "r" (masklo)
+    :    "=&d" (ctr)
+    :    "r" (curbyte), "I" (_SFR_IO_ADDR(ws2812_PORTREG)), "r" (maskhi), "r" (masklo)
     );
   }
   
