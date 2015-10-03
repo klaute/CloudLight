@@ -10,6 +10,8 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 
+#include <stdlib.h>
+
 #include <util/delay.h>
 
 #include "light_ws2812.h"
@@ -20,7 +22,7 @@
 
 #define COLOR_WHITE  10
 
-#define RAND_NUM_TIMEOUT 50
+#define RAND_NUM_TIMEOUT 20 // multiplied with 50 ms + the time to update the LED strip
 
 #define NO_RAND_NUM 255
 
@@ -36,7 +38,7 @@ int main(void)
   //====================//
 
   uint8_t i;
-  uint8_t tmp;
+  uint8_t tmp = 0;
   uint8_t gen_new_rand_num_timeout = RAND_NUM_TIMEOUT;
   uint8_t rand_num = NO_RAND_NUM;
   uint8_t anim = 0;
@@ -61,7 +63,7 @@ int main(void)
 
     if (gen_new_rand_num_timeout == 0 && rand_num == NO_RAND_NUM)
     {
-      gen_new_rand_num_timeout = RAND_NUM_TIMEOUT;
+      gen_new_rand_num_timeout = RAND_NUM_TIMEOUT + (rand() % 100);
 
       rand_num = rand() % LED_COUNT;
       if (rand_num >= LED_COUNT)
